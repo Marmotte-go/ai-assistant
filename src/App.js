@@ -1,26 +1,36 @@
-import "./App.css";
-import { createBrowserRouter } from "react-router-dom";
+import "./App.scss";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import ChatBot from "./pages/ChatBot";
 import LanguageAssistant from "./pages/LanguageAssistant";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Home />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/chatbot",
+          element: <ChatBot />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/language_assistant",
+          element: <LanguageAssistant />,
+          errorElement: <ErrorPage />,
+        },
+      ],
     },
-    {
-      path: "/chatbot",
-      element: <ChatBot />,
-    },
-    {
-      path: "/language_assistant",
-      element: <LanguageAssistant />,
-    }
   ]);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

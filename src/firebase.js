@@ -5,7 +5,6 @@ import { getFunctions } from "firebase/functions";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCCrtmwEPfsNef7iz1aTWmk9pqWNCC2xaM",
   authDomain: "marmottechat-f0b11.firebaseapp.com",

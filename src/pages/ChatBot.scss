@@ -1,0 +1,129 @@
+@import "../App.scss";
+
+.chatbot {
+  max-height: 100vh;
+  min-width: 400px;
+  width: calc(100vw - 250px);
+  color: white;
+  position: relative;
+  left: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    margin: 0;
+    height: 4rem;
+    background-color: $primaryDark;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    text-align: center;
+  }
+
+
+  .chats {
+    width: 80%;
+    height: calc(100vh - 4rem);
+    flex: 1;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    background-color: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      height: calc(100% - 6rem);
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+    
+      .message {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 0.1rem;
+          max-width: 80%;
+
+          span {
+            font-size: 0.8rem;
+            color: $primaryDark;
+            margin: 0;
+          }
+
+          p {
+            margin: 0;
+            background-color: $primaryLight;
+            padding: 0.5rem 1rem;
+            border-radius: 0 1rem 1rem 1rem;
+            width: 100%;
+            max-width: max-content;
+          }
+        }
+
+        &.user {
+          flex-direction: row-reverse;
+
+          .content {
+            align-items: flex-end;
+
+            p {
+              background-color: $primary;
+              border-radius: 1rem 0 1rem 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .input {
+      position: sticky;
+      bottom: 3rem;
+      height: 3rem;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      padding: 0;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0 1rem;
+        font-size: 1rem;
+        color: gray;
+        outline: none;
+        margin-top: 0;
+      }
+
+      .send-icon {
+        fill: gray;
+        cursor: pointer;
+        margin-right: 1rem;
+      }
+    }
+
+    span{
+      color: $primaryDark;
+      font-size: 0.7rem;
+      font-weight: 300;
+      margin-top: 1.5rem;
+    }
+  }
+}
